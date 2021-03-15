@@ -15,15 +15,23 @@
 
 <body>
 
+  <!-- menu -->
+
   <div class="menu">
     <div class="cotainer">
       <div class="menu__gps">
-        <select class="form-select.active">
-          <option selected>English</option>
-          <option value="1">Russia</option>
-          <option value="2">English</option>
-        </select>
-
+        
+        <div class="languages">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+            English
+          </a>
+        
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item"  href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Russian</a></li>
+          </ul>
+        </div>
+        
         <div class="number">
           <i class="fal fa-phone-alt"></i>
           <a href="tel:+998933232233" class="contact">(+998 93) 323 22 33</a>
@@ -40,20 +48,57 @@
     </div>
   </div>
 
+<!-- nav -->
+
   <nav class="nav">
     <div class="container">
       <div class="nav__info">
-        <img src="img/logo.png" alt="" class="nav__img">
+        <img src="img/logo.png" alt="logo" class="nav__img">
         <input class="form-control" type="search" placeholder="What are you looking for?" aria-label="Search">
-        <button class="search-btn btn-outline-success" type="submit">SEARCH OUR STORE</button>
+        
+        
+        <button class="search-btn btn-outline-success" type="submit"><img src="img/search.png" alt="search" class="search"> SEARCH OUR STORE</button>
       </div>
     </div>
   </nav>
 
-  <div class="nav-dn">
-    <h5 class="nav__title">Cell Phones Computers&Laptop     Tv&Video     Asseccories     Home appliance     Video Games&Consoles     </h5>
-  </div>
+  <!-- navigatsion -->
 
+  <div class="navigatsion">
+    
+    <button class="dropdown-btn btn-secondary" type="button" id="dropdownMenu" data-toggle="dropdown" aria-expanded="false">
+      Cell Phones & Tablets
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <li><a class="dropdown-item"  href="#">Xiaomi</a></li>
+      <li><a class="dropdown-item" href="#">Apple</a></li>
+      <li><a class="dropdown-item"  href="#">Samsung</a></li>
+      <li><a class="dropdown-item" href="#">Huawei</a></li>
+      <li><a class="dropdown-item"  href="#">BQ</a></li>
+      <li><a class="dropdown-item" href="#">Nokia</a></li>
+      <li><a class="dropdown-item"  href="#">Inoi</a></li>
+      <li><a class="dropdown-item" href="#">Vivo</a></li>
+    </ul>
+    
+      <button class="dropdown-btn btn-secondary" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
+        Computers & Laptop
+      </button>
+      <button class="dropdown-btn btn-secondary" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="false">
+        Tv & Video
+      </button>
+      <button class="dropdown-btn btn-secondary" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-expanded="false">
+        Asseccories
+      </button>
+      <button class="dropdown-btn btn-secondary" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-expanded="false">
+        Home appliance
+      </button>
+      <button class="dropdown-btn btn-secondary" type="button" id="dropdownMenu6" data-toggle="dropdown" aria-expanded="false">
+        Video Games & Consoles
+      </button>
+    </div>
+
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
