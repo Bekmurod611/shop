@@ -2,3 +2,11 @@
     src: url(../fonts/NotoSans-Regular.ttf);
     font-family: 'N400';
 }
+@font-face {
+    src: url(../fonts/NotoSans-Bold.ttf);
+    font-family: 'N700';
+}
+@font-face {
+    src: url(../fonts/NotoSansJP-Medium.otf);
+    font-family: 'N500';
+}
