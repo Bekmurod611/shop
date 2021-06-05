@@ -11,9 +11,24 @@
     --f500: 'N500';
     --f700: 'N700';
     --m-color: #313131;
+
+    --theme-color: #313131;
+    --theme-bg: #E5E5E5;
+    --theme-bg-footer: #313131;
+    --theme-info: #fff;
+    --theme-link: #313131;
 }
 
+@media(prefers-color-scheme: dark) {
+    :root {
+        --theme-bg: #313131;
+    }
+}
 
+body {
+    background: #E5E5E5;
+    background-color: var(--theme-bg);
+}
 
 ul {
     list-style: none;
@@ -36,6 +51,22 @@ a {
     font-family: var(--f400);
     font-size: 18px;
     line-height: 25px;
+    margin-top: 60px;
+}
+
+.sale {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--m-color);
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--f400);
+
 }
 
 /* menu */
@@ -45,9 +76,10 @@ a {
 }
 
 .menu__gps {
-    width: 1110px;
+    width: 100%;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
     color: #FFFFFF;
@@ -55,25 +87,23 @@ a {
 }
 
 .btn {
-    background: var(--m-color) !important;
-    border-color: var(--m-color) !important;
-    box-shadow: var(--m-color) !important;
-    box-shadow: none !important;
-    outline: none !important;
+    background: var(--m-color);
+    color: #FFFFFF;
+    border-radius: 0;
+    border-color: var(--m-color);
 }
 
 .dropdown-menu {
-    background: #FFFFFF !important;
-    width: max-content !important;
-    margin-top: 6px !important;
+    background: #E5E5E5;
 }
 
 .dropdown-item {
     width: max-content;
+    background: #E5E5E5;
 }
 
 .number i {
-    margin-right: 7.5px;
+    margin-right: 7px;
     margin-left: 79.5px;
 }
 
@@ -89,95 +119,68 @@ a {
 }
 
 .menu__end i {
-    margin-right: 7.5px;
-}
-
-.menu__end-2 {
-    display: flex;
-    align-items: center;
+    margin-right: 7px;
 }
 
 .menu__end-2 i {
-    margin-right: 7.5px;
+    margin-right: 7px;
 }
 
 /* nav */
 
-.nav {
+.nav__inner {
     height: 100px;
+    display: flex;
     align-items: center;
 }
 
-.nav__info {
-    display: flex;
-}
-
-.nav__img {
+.nav__logo {
     margin-right: 143px;
 }
 
-.form-control {
-    display: flex;
-    align-items: center;
-    width: 440px;
-    height: 50px;
-    color: #BBBBBB;
-    border-radius: 0;
-    border-color: var(--m-color) !important;
-    box-shadow: var(--m-color) !important;
-}
-
-.search-btn {
-    color: #FFFFFF;
-    border: solid white;
+.nav__search {
+    width: 630px;
+    max-height: 50px;
+    display: inline-block;
     font-family: var(--f400);
     font-size: 14px;
     line-height: 19px;
-    width: max-content;
-    width: 190px;
-    height: 50px; 
-    box-shadow: none !important;
-    outline: none !important;
-    background: var(--m-color) !important;
-    border: 0 !important;
+    color: #BBBBBB;
+    border: 1px solid #313131;
+    padding: 16px 261px 15px 10px;
+    box-sizing: border-box;
+    background: #E5E5E5;
 }
 
-.nav__title {
-    margin-bottom: 0;
-    text-align: center;
-    height: 30px;
-}
-
-.search {
-    margin-right: 5px;
-}
-
-.nav__menu {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0;
-    margin-top: 10px;
-
-}
-
-.nav__menu-link {
+.nav__btn {
+    width: 100%;
+    max-height: 50px;
+    color: white;
+    border: 1px solid #313131;
+    box-sizing: border-box;
+    max-width: 190px;
+    border-radius: 0;
+    background: #313131;
     font-family: var(--f400);
-    font-size: 18px;
-    color: var(--m-color);
-    margin: 15px;
+    font-size: 14px;
+    line-height: 19px;
+    padding: 16px 17px 15px 15px;
+    display: block;
+}
+
+.nav__icon {
+    font-size: 17px;
+    margin-right: 5px;
 }
 
 .navigatsion {
     display: flex;
     justify-content: center;
-    /* align-items: center !important; */
 }
 
 .dropdown-button {
-    background: #FFFFFF !important;
-    color: var(--m-color) !important;
-    border-color: var(--m-color) !important;
-    box-shadow: #FFFFFF !important;
+    background: #E5E5E5;
+    box-shadow: #E5E5E5;
     margin: 0 10px;
     border: #FFFFFF !important;
     box-shadow: none !important;
@@ -185,6 +188,8 @@ a {
     display: flex;
     justify-content: center;
     position: relative;
+    font-weight: bold;
+    font-family: var(--f400);
 }
 
 .dropdown-button:hover {
@@ -210,51 +215,40 @@ a {
 /* slider */
 
 .carousel [data-target] {
-    background: var(--m-color);
-    width: 10px;
-    height: 10px;
+    background: #828282;
+    width: 15px;
+    height: 15px;
     border: 0;
     border-radius: 50%;
 }
 
 .carousel [data-target].active {
-    background: #ABABAB;
+    background: #313131;
 }
 
 .carousel__info {
     max-width: 630px;
-    height: 150px;
-    /* font-family: var(--f700);
-    font-size: 48px;
-    line-height: 70px;
-    color: var(--m-color); */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .carousel__title {
     font-family: var(--f700);
-    margin-top: 163px;
-    margin-bottom: 0;
-    font-size: 3rem;
+    font-weight: lighter;
+    font-size: 48px;
     line-height: 70px;
-    text-align: center;
-}
-
-.button {
-    margin: 121px 0 118px;
 }
 
 /* product */
 
-.main {
-    text-align: center;
-}
-
 .container {
     padding: 0;
-    /* text-align: center; */
+}
+
+.main__container {
+    text-align: center;
 }
 
 .product__grid {
@@ -265,14 +259,11 @@ a {
     gap: 30px;
 }
 
-.product__item {
-    position: relative;
-}
-
 .product__item:nth-of-type(4n+1) {
     grid-column: span 2;
     grid-row: span 2;
 }
+
 .product__item:nth-of-type(4n+2) {
     grid-column: span 2;
     grid-row: span 1;
@@ -288,85 +279,57 @@ a {
     grid-row: span 1;
 }
 
-.product__item:nth-of-type(4n+1) .product__info {
-    align-items: flex-start;
-    /* padding: 3% 0 2% 3%; */
+.product__info:nth-of-type(4n+1) .sale {
+    margin: 20px;
 }
 
-.product__item:nth-of-type(4n+1) .product__rate {
-    margin-bottom: 305px;
+.product__info:nth-of-type(4n+1) .product__title {
+    margin: 0 0 0 4%;
 }
 
-.product__item:nth-of-type(4n+1) .product__title {
-    font-size: 1.7rem;
-    line-height: 70px;
+.product__info:nth-of-type(4n+1) .product__cost {
+    margin: 0 0 0 4%;
 }
 
-.product__item:nth-of-type(4n+1) .product__text {
-    font-size: 1.7rem;
+.product__info:nth-of-type(4n+3) .sale {
+    margin: 5%;
 }
 
-
-
-.product__item:nth-of-type(4n+2) .product__rate {
-    margin-bottom: 75px;
-    font-size: 20px !important;
+.product__item {
+    position: relative;
+    background: #FFFFFF;
 }
-
-.product__item:nth-of-type(4n+2) .product__title {
-    font-size: 24px !important;
-}
-
-.product__item:nth-of-type(4n+2) .product__text {
-    font-size: 24px !important;
-}
-
-
-
-.product__item:nth-of-type(4n+3) .product__title {
-    font-size: 24px !important;
-    line-height: 30px !important;
-    
-
-}
-
-.product__item:nth-of-type(4n+3) .product__text {
-    font-size: 24px !important;
-    margin-bottom: 45px;
-}
-
-.product__item:nth-of-type(4n+3) .product__rate {
-    font-size: 20px !important;
-}
-
-
-
-.product__item:nth-of-type(4n+4) .product__title {
-    font-size: 24px !important;
-    line-height: 30px !important;
-}
-
-.product__item:nth-of-type(4n+4) .product__text {
-    font-size: 24px !important;
-    margin-bottom: 75px;
-}
-
-.product__item:nth-of-type(4n+4) .product__rate {
-    font-size: 20px !important;
-}
-
-
 
 .product__info {
     position: absolute;
     filter: drop-shadow(-10px 5px 4px rgba(0, 0, 0, 0.25));
-    font-family: var(--f500);
     display: flex;
     flex-direction: column;
-    align-items: flex-start !important;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
-    padding: 3% 0 2% 3%;
+}
+
+.product__name {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.product__title {
+    font-family: var(--f500);
+    margin-bottom: 5px !important;
+    font-family: var(--f400);
+    font-size: 24px;
+    display: inline-block;
+}
+
+.product__cost {
+    font-family: var(--f400);
+    font-size: 24px;
+    line-height: 15px;
+    height: 25px;
 }
 
 .product__img {
@@ -375,49 +338,28 @@ a {
     object-fit: cover;
 }
 
-.product__rate {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: var(--m-color);
-    color: #FFFFFF;
-    font-size: 20px;
-    line-height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--f400);
-}
-
-.product__title {
-    margin-bottom: 5px;
-}
-
-.product__text {
-    margin: 0;
-}
-
 .product__button {
-    text-align: center;
-    font-family: var(--f400);
-    font-size: 20px;
-    line-height: 70px;
-    color: #FFFFFF;
-    background: var(--m-color);
-    padding: 12px 28px;
+    margin-top: 30px;
 }
 
 /* Cell Phone */
 
-.phone__title {
+.phone__container {
+    text-align: center;
+}
+
+.card__title {
     margin: 70px 0 30px;
+    font-size: 36px;
+    line-height: 49px;
+    font-family: var(--f700);
+    font-weight: lighter;
 }
 
 .phone__content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 60px;
 }
 
 .phone__card {
@@ -430,13 +372,33 @@ a {
 .phone__card-inner {
     position: absolute;
     background: url(iphone-12-pro-graphite-hero.png);
-    height: 100%;
-    width: 100%;
+    height: 330px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    
+}
+
+.phone__card-inner:hover .phone__link {
+    opacity: 1;
+}
+
+.hover {
+    position: absolute;
+}
+
+.phone__link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.hover__icon {
+    color: var(--m-color);
+    font-size: 17px;
+    padding: 17.5px 16px 0 0;
 }
 
 .phone__card-inner:nth-of-type(4) {
@@ -446,7 +408,7 @@ a {
 .phone__card-title {
     font-size: 16px;
     margin-bottom: 5px;
-
+    top: 0 !important;
 }
 
 .phone__card-cost {
@@ -454,36 +416,48 @@ a {
     margin: 0;
 }
 
-.phone__button {
+.phone__button-buy {
+    font-family: var(--f400);
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 40px;
     background: var(--m-color);
     color: #FFFFFF;
-    font-family: var(--f400);
-    font-size: 20px;
-    padding: 12px 28px;
-    margin-top: 30px;
-    height: max-content;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone__card-inner:hover .phone__button-buy {
+    opacity: 1;
+}
+
+.phone__button {
+    margin-top: 60px;
 }
 
 /* Computers&Laptop */
 
-.Computers__title {
-    margin: 70px 0 30px;
+.phone__title {
+    margin-bottom: 30px;
 }
 
-.Computers__content {
+.computers__content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.Computers__card {
+.computers__card {
     position: relative;
     width: 300px;
     height: 300px;
     margin-right: 30px;
 }
 
-.Computers__card-inner {
+.computers__card-inner {
     position: absolute;
     background: url(iphone-12-pro-graphite-hero.png);
     height: 100%;
@@ -494,25 +468,23 @@ a {
     justify-content: flex-end;
 }
 
-.Computers__card-title {
+.computers__card-title {
+    font-family: var(--f500);
     font-size: 16px;
-    margin-bottom: 5px;
-
+    line-height: 22px;
+    color: var(--m-color);
 }
 
-.Computers__card-cost {
-    font-size: 14px;
-    margin: 0;
-}
-
-.Computers__button {
-    background: var(--m-color);
-    color: #FFFFFF;
+.computers__card-cost {
     font-family: var(--f400);
-    font-size: 20px;
-    padding: 12px 28px;
-    margin-top: 30px;
-    height: max-content;
+}
+
+.computers__container {
+    text-align: center;
+}
+
+.computers__button {
+    margin-top: 60px;
 }
 
 /* PS-5 */
@@ -523,6 +495,7 @@ a {
 }
 
 .ps5__card-inner {
+    width: 100%;
     position: absolute;
     margin-left: 20px;
     height: 100%;
@@ -536,23 +509,19 @@ a {
 .ps5__title {
     font-family: var(--f700);
     font-size: 48px;
-    margin: 20px 0 70px;
+    margin-bottom: 70px;
 }
 
 .ps5__button {
-    background: var(--m-color);
-    color: #FFFFFF;
-    font-size: 20px;
-    line-height: 24px;
-    padding: 12px 40px;
+    margin: 0;
+}
 
+.ps5__logo {
+    max-width: 100%;
+    margin: 94px 0 20px 0;
 }
 
 /* Top seller */
-
-.seller__title {
-    margin: 70px 0 30px;
-}
 
 .seller__content {
     display: flex;
@@ -579,24 +548,22 @@ a {
 }
 
 .seller__card-title {
+    font-family: var(--f500);
     font-size: 16px;
-    margin-bottom: 5px;
-
+    line-height: 22px;
+    color: var(--m-color);
 }
 
 .seller__card-cost {
-    font-size: 14px;
-    margin: 0;
+    font-family: var(--f400);
+}
+
+.seller__container {
+    text-align: center;
 }
 
 .seller__button {
-    background: var(--m-color);
-    color: #FFFFFF;
-    font-family: var(--f400);
-    font-size: 20px;
-    height: max-content;
-    padding: 12px 28px;
-    margin: 30px 0 70px;
+    margin: 30px 0 70px 0;
 }
 
 /* footer */
@@ -605,7 +572,7 @@ a {
     background: var(--m-color);
 }
 
-.navbar {
+.navbar2 {
     padding: 0;
 }
 
@@ -627,12 +594,11 @@ a {
     line-height: 24px;
     color: #FFFFFF;
     margin: 30px 0 5px 0;
-
+    display: inline-block;
 }
 
 .container-fluid {
     padding: 0;
-    
 }
 
 .footer__control {
@@ -660,6 +626,9 @@ a {
     margin-right: 55px;
 }
 
+.footer__contact {
+    margin-left: 55px;
+}
 
 .footer__ul {
     display: flex;
@@ -694,19 +663,791 @@ a {
     margin: 0;
 }
 
+/* Xbox */
+
+.Xbox {
+    margin: auto;
+}
+
+.Xbox__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Xbox__card-inner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.Xbox__title {
+    margin-bottom: 10px;
+    font-family: var(--f500);
+}
+
+.Xbox__text {
+    margin: 0;
+    width: 454px;
+    height: 65px;
+    font-family: var(--f400);
+    font-size: 24px;
+    line-height: 33px;
+}
+
+
+.Xbox__button {
+    background: var(--m-color);
+    color: #FFFFFF;
+    font-family: var(--f400);
+    font-size: 20px;
+    width: max-content;
+    padding: 13px 38px;
+    margin: 20px;
+}
+
+.Xbox__bg {
+    width: 100%;
+    height: 195px;
+    background: #cecece;
+    position: absolute;
+}
+
+.sahifa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 0 48px;
+}
+
+.pagination {
+    margin: 0;
+    margin-left: -5px;
+}
+
+.page-item {
+    font-family: var(--f400);
+    font-size: 30px;
+    border-right: solid 3px;
+}
+
+.page-item:nth-of-type(4) {
+    border: 0;
+}
+
+.page-link {
+    background: #E5E5E5;
+    color: var(--m-color);
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+}
+
+.page-link:hover {
+    box-shadow: black !important;
+    outline: rosybrown !important;
+    border: seagreen !important;
+}
+
+.page-link:active {
+    outline: red;
+    border: black !important;
+    box-shadow: black !important;
+}
+
+.fas {
+    display: flex;
+    align-items: center;
+}
+
+/* Iphone info */
+
+.iphoneinfo {
+    margin-top: 50px;
+}
+
+.xarakteristikasi {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.kattaiphone {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.telqismlari {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.informatsiya {
+    margin-left: 10px;
+}
+
+.informatsiya__title {
+    margin: 20px 0 40px 0;
+    font-size: 30px;
+    color: black;
+}
+
+.informatsiya-cost {
+    font-family: var(--f500);
+    font-size: 24px;
+    color: black;
+}
+
+.informatsiya__title2 {
+    margin: 20px 0 10px 0;
+    font-family: var(--f500);
+    font-size: 24px;
+}
+
+.informatsiyalari {
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.informatsiya-link {
+    color: #313131;
+    font-family: var(--f400);
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.informatsiya__button {
+    margin-right: 30px;
+    padding: 12px 45px;
+    font-family: var(--f400);
+    font-size: 16px;
+    background: var(--m-color);
+    color: #FFFFFF;
+}
+
+.informatsiya__button2 {
+    padding: 12px 45px;
+    font-family: var(--f400);
+    font-size: 16px;
+    background: var(--m-color);
+    color: #FFFFFF;
+}
+
+/* Playstation VR */
+
+.PlastationVR__card {
+    margin: 40px 0 70px 0;
+    position: relative;
+}
+
+.PlastationVR__card-inner {
+    position: absolute;
+}
+
+.PlastationVR__title {
+    font-family: var(--f700);
+    font-size: 46px;
+    line-height: 65px;
+    margin-bottom: 39px;
+    max-width: 311px;
+    max-height: 65px;
+}
+
+.PlastationVR__yozuvi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PlastationVR__text {
+    font-family: var(--f400);
+    font-size: 24px;
+    line-height: 33px;
+    max-width: 454px;
+    margin-bottom: 116px;
+}
+
+.PlastationVR__button {
+    padding: 12px 45px;
+    font-family: var(--f400);
+    font-size: 16px;
+    background: var(--m-color);
+    color: #FFFFFF;
+}
+
+
 /* responsive media queries */
 
-@media (max-width: 1201px) {
-    .menu {
+@media (max-width: 1400px) {
+
+    .menu__gps {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+    }
+
+    .form-control {
+        width: 250px;
+    }
+
+    .ps5__img {
+        width: 80%;
+    }
+
+    .ps5__title {
+        font-size: 36px;
+    }
+
+    .ps5__logo {
+        width: 200px;
+    }
+
+    .PlastationVR__img {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 1200px) {
+
+    .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav__logo {
+        margin-right: 43px;
+        width: 140px;
+    }
+
+    .nav__search {
+        width: 350px;
+        padding: 5px 45px 6px 5px;
+        font-size: 10px;
+        line-height: 14px;
+        max-height: 25px;
+    }
+
+    .nav__btn {
+        width: 150px;
+        padding: 6px 7px 5px 5px;
+        font-size: 10px;
+        line-height: 14px;
+        max-height: 25px;
+    }
+
+    .nav__icon {
+        width: max-content;
+        padding: 6px;
+    }
+
+    .dropdown-button {
+        padding: 10px 8px;
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0;
+    }
+
+    .carousel__title {
+        width: 350px;
+        font-size: 30px;
+    }
+
+    .carousel__img {
+        width: 700px;
+    }
+
+    .product__grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer__img {
+        margin: 30px 70px 0 0;
+    }
+
+    .footer__button {
+        width: 100px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .ps5__title {
+        margin-bottom: 40px;
+        font-size: 30px;
     }
 }
-@media (max-width: 1130px) {
-    .menu {
-        width: 100%;
-        display: flex;
+
+@media (max-width: 1000px) {
+
+    .xarakteristikasi {
         flex-wrap: wrap;
     }
+
+    .PlastationVR__title {
+        text-align: center;
+    }
+
+    .Xbox__card-inner {
+        right: 0;
+    }
+
+    .Xbox__title {
+        font-size: 18px;
+    }
+
+    .Xbox__text {
+        font-size: 16px;
+    }
+
+    .Xbox__button {
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .nav__search {
+        width: 300px;
+    }
+
+    .carousel__img {
+        width: 550px;
+    }
+
+    .carousel__title {
+        width: 350px;
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
+    .carousel__button {
+        margin: 40px 0;
+        font-size: 10px;
+        padding: 3px 7px;
+    }
+
+    .footer__control {
+        width: 200px;
+    }
+
+    .navigatsion {
+        flex-wrap: wrap;
+    }
+
+    .dropdown-button {
+        margin: 0;
+    }
+
+    .footer__contact {
+        margin-top: 15px;
+    }
+
+    .footer__li {
+        margin-left: 0;
+    }
+
+    .footer__ul {
+        margin: 20px 0 20px 0;
+    }
+
+    .card__title {
+        font-size: 30px;
+        margin: 30px 0 10px;
+    }
+
+    .ps5__logo {
+        margin: 40px 0 20px 0;
+    }
+
+    .ps5__title {
+        width: 300px;
+    }
+
+}
+
+
+
+@media (max-width: 780px) {
+
+    .carousel__title {
+        height: 100px;
+        font-size: 24px;
+        width: 300px;
+    }
+
+    .btn {
+        font-size: 13px;
+    }
+
+    .contact {
+        margin-right: 30px;
+        font-size: 13px;
+    }
+
+    .menu__end {
+        margin-right: 30px;
+        font-size: 13px;
+    }
+
+    .menu__end-2 {
+        font-size: 13px;
+    }
+
+    .container {
+        max-width: 540px;
+    }
+
+    .nav__search {
+        width: 200px;
+    }
+
+    .nav__btn {
+        width: 150px;
+    }
+
+    .number i {
+        margin-right: 7.5px;
+        margin-left: 40px;
+    }
+
+    .ps5__logo {
+        width: 150px;
+        margin: 20px 0 20px 0;
+    }
+
+    .ps5__title {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .card__title {
+        margin: 10px 0 10px;
+    }
+
+    .nav__img {
+        margin-right: 60px;
+        margin-top: 10px;
+    }
+
+    .nav__info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigatsion {
+        position: relative;
+    }
+
+    .footer__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__contact {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 25px;
+    }
+
+    .footer__search {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .d-flex {
+        justify-content: center;
+    }
+
+    .pagination {
+        height: 20px;
+    }
+
+    .page-item {
+        font-size: 16px;
+        height: 20px;
+    }
+
+    .page-link {
+        padding: 0 5px;
+        border: 0;
+    }
+
+    .PlastationVR__text {
+        margin-bottom: 50px;
+    }
+}
+
+
+
+@media (max-width: 580px) {
+
+    .PlastationVR__title {
+        font-size: 36px;
+    }
+
+    .PlastationVR__text {
+        font-size: 16px;
+    }
+
+    .PlastationVR__button {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .sahifa {
+        padding: 20px 0;
+    }
+
+    .menu__gps {
+        height: 35px;
+        max-width: 100%;
+    }
+
+    .product__info:nth-of-type(4n+1) .sale {
+        margin: 5px;
+        margin: 5px;
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+
+    .product__title {
+        font-size: 16px;
+    }
+
+    .product__cost {
+        font-size: 16px;
+    }
+
+    .dropdown-menu {
+        font-size: 14px;
+    }
+
+    .number {
+        font-size: 14px;
+    }
+
+    .nav__inner {
+        width: 100%;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .nav__search {
+        width: 190px;
+    }
+
+    .nav__logo {
+        margin: 10px 0 10px;
+    }
+
+    .number i {
+        margin-right: 7.5px;
+        margin-left: 10px;
+    }
+
+    .footer__control {
+        width: 180px;
+    }
+
+    .ps5__logo {
+        margin: 0;
+        width: 100px;
+    }
+
+    .ps5__title {
+        width: 140px;
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .ps5__button {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .ps5__img {
+        width: 70%;
+    }
+
+    .card__title {
+        text-align: center;
+    }
+
+    .menu__end-2 {
+        margin-right: 5px;
+    }
+
+    .computers__button {
+        margin: 0;
+    }
+
+    .phone__button {
+        margin: 10px;
+    }
+
+    .product__button {
+        margin: 0;
+    }
+
+    .seller__button {
+        margin-bottom: 10px;
+    }
+
+    .ps5__card-inner {
+        width: 400px;
+    }
+
+    .Xbox__title {
+        font-size: 13px;
+    }
+
+    .Xbox__text {
+        font-size: 13px;
+        width: 300px;
+    }
+
+    .Xbox__button {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    .informatsiya__button {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .informatsiya__button2 {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .PlastationVR__img {
+        padding: 0 !important;
+    }
+
+    .PlastationVR__title {
+        margin-bottom: 0px;
+    }
+
+    .PlastationVR__text {
+        margin-bottom: 20px;
+    }
+
+    .row {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin-left: 5px;
+    }
+}
+
+
+
+@media (max-width: 500px) {
+
+    .PlastationVR__text {
+        font-size: 14px;
+    }
+
+    .iphonekatta {
+        right: 0;
+    }
+
+    .telqismlari {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    .telchalar:nth-of-type(2) {
+        margin: 0 20px;
+    }
+
+}
+
+@media (max-width: 488px) {
+
+    .telchalar {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
+@media (max-width: 430px) {
+
+    .ps5__card-inner {
+        width: 300px;
+        margin-left: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ps5__img {
+        right: 0;
+    }
+
+    .ps5__button {
+        width: max-content;
+    }
+
+    .btn {
+        font-size: 9px;
+    }
+
+    .contact {
+        font-size: 9px;
+        margin-right: 8px;
+    }
+
+    .menu__end {
+        font-size: 9px;
+        margin-right: 8px;
+    }
+
+    .menu__end-2 {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .nav__search {
+        width: 145px;
+        padding: 2px;
+    }
+
+    .footer__button {
+        margin-right: 0;
+    }
+
 }
